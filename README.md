@@ -6,6 +6,9 @@
 <li>Giving ideas for built-in variables (e.g Earth's gravitational pull)</li>
 <li>Providing ideas for other features</li>
 
+<h2>Installation</h2>
+<h3>Windows</h3>
+`pip install tiquations`
 
 All contributions are GREATLY appreciated and I will try and make a list of all the contributors within the source code
 
