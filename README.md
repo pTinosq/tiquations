@@ -1,2 +1,30 @@
-# tiquations
-Tiquations is an Open-Source Python package that is aimed to give mathematicians and scientists easy access to important equations that they may use often. It was amde in python 3.7 and should work on all versions higher than 3.0.
+<h1>Tiquations</h1>
+
+<h2>Discord Server</h2>
+<p>For information about Tiquations, support, update information and discussion join my Discord server!</p>
+<p>https://discord.gg/JB2Ng5K</p>
+
+<h2>Documentation</h2>
+<p>I have created a website using wix but it's really not that great. The easiest way to go about reading documentation is to type tiquations.help() in your console.</p>
+
+<h2>Help commands</h2>
+<ul>
+<li>tiquations.help()</li>
+<li>tiquations.vars()</li>
+<li>tiquations.version()</li>
+</ul>
+
+<h2>Equations</h2>
+<ul>
+<li>Quadratic equation</li>
+<li>Distance/Speed/Time</li>
+<li>Force/Mass/Acceleration</li>
+<li>Weight/Mass/Gravitational field strength</li>
+<li>Circle area/diameter/circumference</li>
+<li>Delta Velocity/Time taken/Acceleration</li>
+<li>Force/Area/Pressure</li>
+<li>Cylinder Volume/Surface Area</li>
+<li>Trapezoid Area/Height/Surface Area</li>
+<li>Pythagoras' Theorum</li>
+</ul>
+
