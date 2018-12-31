@@ -1,6 +1,6 @@
-#Tiquations#
+<h1>Tiquations</h1>
 
-##Contributing##
+<h2>Contributing</h2>
 * Giving ideas for equations
 * Contributing an equation in the same format as the source code.
 * Giving ideas for built-in variables (e.g Earth's gravitational pull)
