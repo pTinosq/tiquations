@@ -8,7 +8,7 @@
 
 <h2>Installation</h2>
 <h3>Windows</h3>
-`pip install tiquations`
+<p>pip install tiquations</p>
 
 All contributions are GREATLY appreciated and I will try and make a list of all the contributors within the source code
 
