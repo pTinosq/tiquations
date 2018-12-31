@@ -1,12 +1,11 @@
 <h1>Tiquations</h1>
 
 <h2>Contributing</h2>
-<li>
--Giving ideas for equations
--Contributing an equation in the same format as the source code.
--Giving ideas for built-in variables (e.g Earth's gravitational pull)
--Providing ideas for other features
-</li>
+<li>Giving ideas for equations</li>
+<li>Contributing an equation in the same format as the source code.</li>
+<li>Giving ideas for built-in variables (e.g Earth's gravitational pull)</li>
+<li>Providing ideas for other features</li>
+
 
 All contributions are GREATLY appreciated and I will try and make a list of all the contributors within the source code
 
