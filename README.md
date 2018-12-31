@@ -1,4 +1,12 @@
-<h1>Tiquations</h1>
+#Tiquations#
+
+##Contributing##
+* Giving ideas for equations
+* Contributing an equation in the same format as the source code.
+* Giving ideas for built-in variables (e.g Earth's gravitational pull)
+* Providing ideas for other features
+
+All contributions are GREATLY appreciated and I will try and make a list of all the contributors within the source code
 
 <h2>Discord Server</h2>
 <p>For information about Tiquations, support, update information and discussion join my Discord server!</p>
