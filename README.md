@@ -1,28 +1,12 @@
 <h1>Tiquations</h1>
 
-<h2>Contributing</h2>
-<li>Giving ideas for equations</li>
-<li>Contributing an equation in the same format as the source code.</li>
-<li>Giving ideas for built-in variables (e.g Earth's gravitational pull)</li>
-<li>Providing ideas for other features</li>
-
-<h2>Installation</h2>
-<h3>Windows</h3>
-<p>pip install tiquations</p>
-
-All contributions are GREATLY appreciated and I will try and make a list of all the contributors within the source code
-
-<h2>Discord Server</h2>
-<p>For information about Tiquations, support, update information and discussion join my Discord server!</p>
-<p>https://discord.gg/JB2Ng5K</p>
-
 <h2>Documentation</h2>
 <p>I have created a website using wix but it's really not that great. The easiest way to go about reading documentation is to type tiquations.help() in your console.</p>
 
 <h2>Help commands</h2>
 <ul>
 <li>tiquations.help()</li>
-<li>tiquations.vars()</li>
+<li>constants.variables()</li>
 <li>tiquations.version()</li>
 </ul>
 
@@ -38,5 +22,6 @@ All contributions are GREATLY appreciated and I will try and make a list of all 
 <li>Cylinder Volume/Surface Area</li>
 <li>Trapezoid Area/Height/Surface Area</li>
 <li>Pythagoras' Theorum</li>
+<li>Energy/Charge/Potential difference</li>
+<li>Power/Current/Potential difference</li>
 </ul>
-
