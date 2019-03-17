@@ -1,2 +1,2 @@
-from equations import *
-from constants import *
+from .equations import *
+from .constants import *

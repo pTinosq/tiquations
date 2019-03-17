@@ -3,8 +3,7 @@
 import webbrowser
 import os
 import math
-import constants
-from constants import *
+from .constants import *
 
 try:
     io=open("intro.txt","r+")
@@ -19,7 +18,7 @@ def intro():
     
 def version():
     print('''
-Currently running Version tiquations 0.0.7
+Currently running Version tiquations 0.0.7a
 Changelog:
 -Fixed up file formatting with __init__.py, equations.py and constants.py
 -Added energy, potential difference and charge equations
@@ -28,6 +27,9 @@ Changelog:
 -Renamed tiquations.vars() to tiquations.variables()
 -To access the old vars() command, type constants.variables(). This will give you a list of the constants.
 -Added intro that can be disabled, read help() for info.
+
+0.0.7a:
+Hotfix to fix code-breaking bug
 
 ''')
 

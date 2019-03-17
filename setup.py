@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="tiquations",
-    version="0.0.7",
+    version="0.0.7a",
     author="Tinos Psomadakis",
     author_email="tinosps@gmail.com",
     description="A package that solves important formulas for physics and mathematics. Head to the website for documentation and more info!",
