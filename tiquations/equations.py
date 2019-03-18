@@ -1,35 +1,22 @@
 #Package created by Tinos Psomadakis
-#Version 0.0.7
+#Version 0.0.9
 import webbrowser
 import os
 import math
 from .constants import *
 
-try:
-    io=open("intro.txt","r+")
-    a=io.read()
-    print(a)
-    io.close()
-except FileNotFoundError as o:
-    pass
-
-def intro():
-    os.remove("intro.txt")
-    
 def version():
     print('''
-Currently running Version tiquations 0.0.7a
+Currently running Version tiquations 0.0.9
 Changelog:
--Fixed up file formatting with __init__.py, equations.py and constants.py
--Added energy, potential difference and charge equations
--Added power, current and potential difference equations
--Fixed typo with delta_velocity
--Renamed tiquations.vars() to tiquations.variables()
--To access the old vars() command, type constants.variables(). This will give you a list of the constants.
--Added intro that can be disabled, read help() for info.
-
-0.0.7a:
-Hotfix to fix code-breaking bug
+-Removed units and prints to help make equations easier to implement into code. Answers will now be returned rather than printed.
+-Bug fixes
+-Typo fixes
+-Added power, energy, time equations.
+-Added cosine rule equations
+-Added euler's constants to constants
+-Added Golden ration to constants
+-Added Orbital speed, orbital time, radius equations.
 
 ''')
 
@@ -37,216 +24,222 @@ Hotfix to fix code-breaking bug
 def quadratic(num1,num2,num3):
     result1 = (-num2 + math.sqrt(num2**2 - (4 * (num1) * (num3))))
     ans1 = (result1 / (2 * num1))
-    print("Positive value: ")
-    print(ans1)
-    print("-------------------------------------------------------------")
-    print("Negative value: ")
     result2 = (-num2 - math.sqrt(num2**2 - 4 * (num1) * (num3)))
     ans2 = (result2 / (2 * num1))
-    print(ans2)
+    return ans1, ans2
 
 
 #Solve distance using speed and time
 def distance_dst(speed, time):
-    result = speed*time
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return speed*time
 
 #Solve speed using distance and time
 def speed_dst(distance, time):
-    result = distance/time
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return distance/time
 
 #Solve time using speed and distance
 def time_dst(distance, speed):
-    result = distance/speed
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return distance/speed
 
 #Solve force using mass and acceleration
 def force_fma(mass,acceleration):
-    result = mass*acceleration
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return mass*acceleration
+
 
 #Solve mass using force and acceleration
 def mass_fma(force,acceleration):
-    result = force/acceleration
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return force/acceleration
+
 
 #Solve acceleration using mass and force
 def acceleration_fma(force,mass):
-    result = force/mass
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return force/mass
+
 
 #Solve weight using mass and gravitational field strength
 def weight_wmg(mass, gravitational_field_strength):
-    result = mass*gravitational_field_strength
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return mass*gravitational_field_strength
+
     
 #Solve mass using weight and gravitational field strength
 def mass_wmg(weight, gravitational_field_strength):
-    result = weight/gravitational_field_strength
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return weight/gravitational_field_strength
+
 
 #Solve gravitational field strength using weight and mass
 def gravity_wmg(weight, mass):
-    result = weight/mass
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return weight/mass
+
 
 #Solve for area of circle using radius
 def circle_area_rad(radius):
-    result = pi*(radius**2)
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return pi*(radius**2)
+
     
 #Solve for area of circle using diameter
 def circle_area_dia(diameter):
-    result = (1/4)*(pi*(diameter**2))
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return (1/4)*(pi*(diameter**2))
+
     
 #Solve for diameter of circle using radius
 def circle_diam_rad(radius):
-    result = radius*2
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return radius*2
+
     
 #Solve for diameter of circle using area
 def circle_diam_are(area):
-    result = 2*(math.sqrt(area/pi))
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return 2*(math.sqrt(area/pi))
+
     
 #Solve for circumference of circle using area
 def circle_circum(radius):
-    result = 2*(pi*radius)
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return 2*(pi*radius)
+
 
 #Solve acceleration using Change in velocity and time
 def acceleration_avt(delta_velocity,time):
-    result = delta_velocity/time
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return delta_velocity/time
+
     
 #Solve Change in velocity using acceleration and time
 def delta_velocity_avt(acceleration,time):
-    result = acceleration*time
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return acceleration*time
+
     
 #Solve time taken using acceleration and change in velocity
 def time_avt(acceleration,delta_velocity):
-    result = delta_velocity/acceleration
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return delta_velocity/acceleration
+
 
 #Solve pressure using force and area
 def pressure_fpa(force, area):
-    result = force/area
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return force/area
+
 
 #Solve force using pressure and area
 def force_fpa(pressure, area):
-    result = pressure/area
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return pressure/area
+
     
 #Solve area using pressure and force
 def area_fpa(force, pressure):
-    result = force*pressure
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return force*pressure
+
     
 #Solve volume of a cylinder
 def cylinder_vol(radius,height):
-    result = pi*(radius**2*(height))
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return pi*(radius**2*(height))
+
     
 #Solve surface area of a cylinder
 def cylinder_surface_are(radius,height):
-    result = (2*(pi*radius*height))+2*(pi*(radius**2))
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return (2*(pi*radius*height))+2*(pi*(radius**2))
+
     
 #Solve area of a trapezoid
 def trapezoid_area(base_short,base_long,height):
-    result = ((base_short+base_long)/2)*height
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return ((base_short+base_long)/2)*height
+
     
 #Solve height of a trapezoid
 def trapezoid_height(base_short,base_long,area):
-    result = 2*(area/(base_short+base_long))
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return 2*(area/(base_short+base_long))
+
     
 #Solve surface area of a trapezoid
 def trapezoid_surface_are(base_short,base_long,height):
-    result = ((base_short+base_logn)/2)*height
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return ((base_short+base_logn)/2)*height
+
 
 #Solve a using pythagoras
 def pythagoras_a(b,c):
-    result = math.sqrt((c**2)-(b**2))
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return math.sqrt((c**2)-(b**2))
+
 
 #Solve b using pythagoras
 def pythagoras_b(a,c):
-    result = math.sqrt((c**2)-(a**2))
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit) 
+    return math.sqrt((c**2)-(a**2))
+
     
 #Solve c using pythagoras
 def pythagoras_c(a,b):
-    result = math.sqrt((a**2)+(b**2))
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return math.sqrt((a**2)+(b**2))
+
     
 def energy_evq(potential_difference,charge):
-    result = potential_difference*charge
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return potential_difference*charge
+
 
 def potential_dif_evq(energy,charge):
-    result = energy/charge
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return energy/charge
+
 
 def charge_evq(energy,potential_difference):
-    result = energy/potential_difference
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return energy/potential_difference
+
     
 def power_piv(current, potential_difference):
-    result = current*potential_difference
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return current*potential_difference
+
 
 def current_piv(power, potential_difference):
-    result = power/potential_difference
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return power/potential_difference
+
     
 def potential_dif_piv(power, current):
-    result = power/current
-    unit = input("What unit are you measuring the distance in?")
-    print(result,unit)
+    return power/current
+
     
-def power_pet(energy,time):
-    result = energy/time
-    
+def power_pet(energy,time): #0.0.9
+    return energy/time
+
+
+def energy_pet(power,time):
+    return power*time
+
+def time_pet(power,energy):
+    return energy/power
+
+def sequence_nth(first_term,term_number,common_difference):
+    return first_term+(common_difference*(term_number-1))
+
+def sequence_first(nth,term_number,common_difference):
+    return nth-(common_difference*(term_number-1))
+
+def sequence_difference(nth,first_term,term_number):
+    return (nth-first_term)/(term_number-1)
+
+def sequence_termnum(nth,first_term,common_difference):
+    return ((nth-first_term)/common_difference)+1
+
+def orbitalspeed_vrt(radius,time):
+    return (2*(math.pi)*radius)/time
+
+def radius_vrt(orbitalspeed,time):
+    return (orbitalspeed*time)/(2*math.pi)
+
+def orbittime_vrt(orbitalspeed,radius):
+    return (2*math.pi*radius)/orbitalspeed
+
+def cosine_side_a(b,c,A_radians):
+    return math.sqrt((b**2+c**2)-2*(b*c*math.cos(A_radians)))
+
+def cosine_side_b(a,c,B_radians):
+    return math.sqrt(a**2+c**2-2*a*c*math.cos(B_radians))
+
+def cosine_side_c(a,b,C_radians):
+    return math.sqrt(a**2+b**2-2*a*b*math.cos(C_radians))
+
+def cosine_angle_A(a,b,c):
+    return math.acos(((b**2+c**2)-a**2)/(2*b*c))
+
+def cosine_angle_B(a,b,c):
+    return math.acos(((a**2+c**2)-b**2)/(2*a*c))
+
+def cosine_angle_C(a,b,c):
+    return math.acos(((a**2+b**2)-c**2)/(2*a*b))
+
+
 def help():
     webbrowser.open_new_tab('https://tinosps.wixsite.com/tiquations')
     #General
@@ -255,7 +248,7 @@ A python package containing useful equations for science and maths.
 Created by Tinos Psomadakis\n
           ''')
     #Commands
-    print("To disable the thank you intro, do tiquations.intro()\n")
+    print("Angles are always measured in radians")
     print('''
 Commands:
 
@@ -294,10 +287,26 @@ charge_evq(energy,potential_difference) - Find charge using energy and potential
 power_piv(current, potential_difference) - Find power using current and potential difference
 current_piv(power, potential_difference) - Find current using power and potential difference
 potential_dif_piv(power, current) - Find potential difference using power and current
+power_pet(energy,time) - Find power using energy and time
+energy_pet(power,time) - Find energy using power and time
+time_pet(power,energy) - Find time using power and energy
+sequence_nth(first_term,term_number,common_difference) - Find nth term of sequence
+sequence_first(nth,term_number,common_difference) - Find the first term of a sequence
+sequence_difference(nth,first_term,term_number) - Find difference of a sequence
+sequence_termnum(nth,first_term,common_difference) - Find term number of a sequence
+orbitalspeed_vrt(radius,time) - Find orbital speed using radius and orbit time
+radius_vrt(orbitalspeed,time) - Find radius using orbital speed and orbit time
+orbittime_vrt(orbitalspeed,radius) - Find orbit time using orbital speed and radius
+cosine_side_a(b,c,A_radians) - Find side a using cosine rule
+cosine_side_b(a,c,B_radians) - Find side b using cosine rule
+cosine_side_c(a,b,C_radians) - Find side c using cosine rule
+cosine_angle_A(a,b,c) - Find angle A using cosine rule
+cosine_angle_B(a,b,c) - Find angle B using cosine rule
+cosine_angle_C(a,b,c) - Find angle C using cosine rule
 
 Usage:
-tiquations.example_xyz(5,72)
-tiquations.quadratic(1,2,-3)
+hello = tiquations.example_xyz(5,72)
+testing = tiquations.quadratic(1,2,-3)
 
           ''')
     
@@ -315,10 +324,13 @@ uranus_g - Uranus' gravitational pull strength in m/s² = 8.87
 venus_g - Venus' gravitational pull strength in m/s² = 8.87
 pluto_g - Pluto's gravitational pull strength in m/s² = 0.62
 pi - First 16 numbers of pi = 3.141592653589793
+eulersnum - Euler's number = 2.7182818284590452353602874713527
+eulersmasch - Euler's Mascheroni Constant = 0.577215664901532860606512
+golden_ratio - The golden ration = 1.6180339887498948420
 
 Usage:
-tiquations.example(pi,67)
-tiquations.weight_wmg(52, earth_g)
+var = tiquations.example(pi,67)
+weight = tiquations.weight_wmg(52, earth_g)
 
-Type constants.variables() to see a full list with attached values
+Type tiquations.variables() to see a full list with attached values
         ''')

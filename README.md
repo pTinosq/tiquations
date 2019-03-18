@@ -13,6 +13,8 @@
 <h2>Equations</h2>
 <ul>
 <li>Quadratic equation</li>
+<li>Mathematical sequence equations</li>
+<li>Cosine Rules for angles and sides</li>
 <li>Distance/Speed/Time</li>
 <li>Force/Mass/Acceleration</li>
 <li>Weight/Mass/Gravitational field strength</li>
@@ -24,4 +26,6 @@
 <li>Pythagoras' Theorum</li>
 <li>Energy/Charge/Potential difference</li>
 <li>Power/Current/Potential difference</li>
+<li>Power/Energy/Time</li>
+<li>Orbital speed/Radius/Time taken</li>
 </ul>
