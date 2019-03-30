@@ -240,6 +240,149 @@ def cosine_angle_C(a,b,c):
     return math.acos(((a**2+b**2)-c**2)/(2*a*b))
 
 
+
+#FORCES:
+
+#(f(g)=mg) finds force of gravity (f(g)=mg) using mass and grav constant
+def force_grav(mass,g):
+    return mass * g
+#(f(g)=mg) find mass using force of grav and g
+def force_g_mass(force_g,g):
+    return force_g / g
+#(f(g)=mg) find grav constant using force of g and mass
+def force_g_constant(force_g,mass):
+    return force_g / mass
+
+#(F(f)=u*F(n)) - finds force of friction (F(f)) using normal force and friction coefficent
+def friction_force(n_force,f_coeff):
+    return n_force * f_coeff
+#(F(f)=u*F(n)) finds normal force (F(n)) using F(f) and friction coefficient (u)
+def friction_normal(f_force,f_coeff):
+    return f_force / f_coeff
+#(F(f)=u*F(n)) finds friction coefficient (u) using F(f) and F(n)
+def friction_u(f_force,n_force):
+    return f_force / n_force
+
+#the following only work when friction is the ONLY force!
+#(a=ug) find acceleration using fric. coefficient (u) and grav constant
+def aug_a(f_coeff,g):
+    return f_coeff * g
+#(a=ug) find fric. coefficient (u) using acceleration and grav constant
+def aug_u(a,g):
+    return a / g
+#(a=ug) find grav constant using u and a
+def aug_g(a,f_coeff):
+    return a / f_coeff
+
+#(u=F(f)/F(n)) find u with F(f) and F(n)
+def u_coefficient(f_force,n_force):
+    return f_force / n_force
+#(u=F(f)/F(n)) find F(f) with u and F(n)
+def u_friction(u,n_force):
+    return u * n_force
+#(u=F(f)/F(n)) find F(n) with u and F(f)
+def u_normal(u,f_force):
+    return f_force / u
+
+
+
+#MIRRORS
+#d(o) = distance (object)
+#d(i) = distance (image)
+#h(o) = height (object)
+#h(i) = height (image)
+#m = magnification 
+
+#(h(i) = h(o)) for plane mirrors
+def plane_mirror_hi(h_o):
+    return h_o
+def plane_mirror_ho(h_i):
+    return h_i
+#(d(i) = d(o)) for plane mirrors
+def plane_mirror_di(d_o):
+    return d_o
+def plane_mirror_do(d_i):
+    return d_i
+
+#(C=2f) find radius (C) with focal point (f) for concave and convex mirrors
+def c2f_c(f):
+    return 2 * f
+#(C=2f) find focal point with C
+def c2f_f(C):
+    return C / 2
+
+#(f=(di*do/di+do)) find focal point (f) with d(i) and d(o)
+def focal_point(d_i,d_o):
+    numerator = d_i * d_o
+    denominator = d_i + d_o
+    return numerator / denominator
+#d(i)=(f*do/do-f) find d(i) with focal point and d(o)
+def mirror_distance_i(f,d_o):
+    numerator = f * d_o
+    denominator = d_o - f
+    return numerator / denominator
+#d(o)=(f*di/di-f) find d(o) with focal point and d(i)
+def mirror_distance_o(f,d_i):
+    numerator = f * d_i
+    denominator = d_i - f
+    return numerator / denominator
+
+#the following equations are variations of m=(hi/ho)=(-di/do)
+#find m with h(i) and h(o)
+def mirror_mag_h(h_i,h_o):
+    return h_i / h_o
+#find m with d(i) and d(o)
+def mirror_mag_d(d_i,d_o):
+    neg_di = (-1) * d_i
+    return neg_di / d_o
+#find h(i) with m and h(o)
+def mirror_hi_m(m,h_o):
+    return m * h_o
+#find h(i) with d(i), d(o), and h(o)
+def mirror_hi_hodido(d_i,d_o,h_o):
+    neg_di = (-1) * d_i
+    numerator = neg_di * h_o
+    return numerator / d_o
+#find h(o) with m and h(i)
+def mirror_ho_m(h_i,m):
+    return h_i / m
+#find h(o) with d(i), d(o), h(i)
+def mirror_ho_hodido(d_i,d_o,h_i):
+    neg_di = (-1) * d_i
+    numerator = h_i * d_o
+    return numerator / neg_di
+
+
+#PENDULUMS
+#T = period
+#L = length of string (of pendulum)
+#g = grav constant (acceleration of grav)
+
+#T = 2(pi)*sqrt(L/g)
+
+#find T with L and g
+def pendulum_T(L,g):
+    2pi = 2 * pi
+    LG = L / g
+    sqroot = math.sqrt(LG)
+    return 2pi * sqroot
+#find L with T and g
+def pendulum_L(T,g):
+    2pi = 2 * pi
+    T2pi = T / 2pi
+    T2pi_sq = T2pi * T2pi
+    return g * T2pi_sq
+#find g with T and L
+def pendulum_g(T,L):
+    2pi = 2 * pi
+    2pi_sq = 2pi * 2pi
+    T_sq = T * T
+    numerator = L * 2pi_sq
+    return numerator / T_sq
+
+
+
+
 def help():
     webbrowser.open_new_tab('https://tinosps.wixsite.com/tiquations')
     #General
@@ -327,6 +470,19 @@ pi - First 16 numbers of pi = 3.141592653589793
 eulersnum - Euler's number = 2.7182818284590452353602874713527
 eulersmasch - Euler's Mascheroni Constant = 0.577215664901532860606512
 golden_ratio - The golden ration = 1.6180339887498948420
+sun_to_earth - Distance from Sun to the Earth in km = 149597870 
+sun_to_mars - Distance from Sun to Mars in km = 227940000 
+sun_to_mercury - Distance from Sun to Mercury in km = 57900000 
+sun_to_venus - Distance from Sun to Venus in km = 108200000 
+sun_to_jupiter - Distance from Sun to Jupiter in km = 778300000 
+sun_to_neptune - Distance from Sun to Neptune in km = 4497100000 
+sun_to_saturn - Distance from Sun to Saturn in km = 1427000000 
+sun_to_uranus - Distance from Sun to Uranus in km = 2871000000 
+sun_to_pluto - Distance from Sun to Pluto in km = 5913000000 
+I_naught - I naught, for Mirror Equations = 0.000000000001
+speed_of_light - Speed of Light in m/s² = 299792458
+avogadros_num - Avogadro's Number = 602214086000000000000000
+earth_mass - Mass of the Earth in kg = 5980000000000000000000000
 
 Usage:
 var = tiquations.example(pi,67)
