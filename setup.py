@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="tiquations",
-    version="0.0.7a",
+    version="1.0.0",
     author="Tinos Psomadakis",
     author_email="tinosps@gmail.com",
-    description="A package that solves important formulas for physics and mathematics. Head to the website for documentation and more info!",
+    description="Tiquations is an Open-Source Python package that is aimed at giving mathematicians and scientists easy access to important equations that they may use often. It was made in python 3.7 and should work on all versions higher than 3.0.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://tinosps.wixsite.com/tiquations",

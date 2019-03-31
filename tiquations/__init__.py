@@ -1,3 +1,5 @@
 from .equations import *
 from .constants import *
-print("Made using Tiquations")
+from .planets import *
+import logging
+logging.getLogger(__name__).info("Made using Tiquations 1.0")
