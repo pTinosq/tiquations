@@ -1,4 +1,4 @@
-<h1>Tiquations 1.0</h1>
+<h1>Tiquations 1.1</h1>
 
 <h2>Documentation</h2>
 <p>I have created a website using wix but it's really not that great. The easiest way to go about reading documentation is to type tiquations.help() in your console.</p>
