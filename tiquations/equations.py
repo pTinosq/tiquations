@@ -6,23 +6,10 @@ from .constants import *
 from .planets import *
 def version():
     print('''
-Currently running tiquations Version 1.0
+Currently running tiquations Version 1.1
 Changelog:
--Fixed spelling mistakes
--Updated PYPI description
--Added E=mc^2 to solve for energy and mass
--Added light_speed constant (c)
--Created planets.py to store all planet related constants. This will allow you to use tiquations only for the planets by doing from tiquations import planets
--Thanks to the_real_irgeek I have made quadratic run much more quickly and change pythagoras to be easier to use!
--Added description to every variable
--Renamed potential difference to Voltage to make it more understandable for everyone.
--Fixed up code to be easier to read
--Added sphere radius/density/mass calculations
--Added schwarzschild black hole radius calculations
--Added volume of cube calculation
--Added sphere mass, density, volume and radius calculations
--Added volume calculations for cubes, rectangles, pyramids and cones
--Added constants for mass, radius and surface area for each planet.
+
+-Completely revamped planets by switching to classes. Usage is now PLANET.OPTION e.g earth.surface_area or mars.gravity
 ''')
 
 #NOTE TO SELF ADD . to constants
@@ -578,70 +565,85 @@ testing = tiquations.quadratic(1,2,-3)
     
     #Built-in variables
     print('''
-Built-in variables:
-earth_g = 9.807 m/s^2
-moon_g = 1.62 m/s^2
-mars_g = 3.711 m/s^2
-jupiter_g = 24.79 m/s^2
-neptune_g = 11.15 m/s^2
-mercury_g = 3.7 m/s^2
-saturn_g = 10.44 m/s^2
-uranus_g = 8.87 m/s^2
-venus_g = 8.87 m/s^2
-pluto_g = 0.62 m/s^2
-earth_m = 5.972e24
-earth_r = 6371
-earth_sa = 510.1
-moon_m = 7.34767309e22
-moon_r = 1737.1
-moon_sa = 3.793e7
-mars_m = 0.64171e24
-mars_r = 3389.5
-mars_sa = 114.8
-jupiter_m = 1.898e27
-jupiter_r = 69911
-jupiter_sa = 61420
-neptune_m = 1.024e26
-neptune_r = 24622
-neptune_sa = 7618
-mercury_m = 3.285e23
-mercury_r = 2439.7
-mercury_sa = 74.8
-saturn_m = 5.683e26
-saturn_r = 58232
-saturn_sa = 42700
-uranus_m = 8.681e25
-uranus_r = 25362
-uranus_sa = 8083
-venus_m = 4.867e24
-venus_r = 6051.8
-venus_sa = 460.2
-pluto_m = 1.30900e22
-pluto_r =1188.3
-pluto_sa = 16647940
+Built-in constants:
+earth.gravity = 9.807 m/s^2
+moon.gravity = 1.62 m/s^2
+mars.gravity = 3.711 m/s^2
+jupiter.gravity = 24.79 m/s^2
+neptune.gravity = 11.15 m/s^2
+mercury.gravity = 3.7 m/s^2
+saturn.gravity = 10.44 m/s^2
+uranus.gravity = 8.87 m/s^2
+venus.gravity = 8.87 m/s^2
+pluto.gravity = 0.62 m/s^2
+
+earth.mass =  5.98 * 10^24 kg
+earth.radius = 6371 km
+earth.surface_area = 510.1 km^2
+
+moon.mass = 7.34767309e22 kg
+moon.radius = 1737.1 km
+moon.surface_area = 3.793e7 km^2
+
+mars.mass = 6.4171e23 kg
+mars.radius = 3389.5 km
+mars.surface_area = 114.8 km^2
+
+jupiter.mass = 1.898e27 kg
+jupiter.radius = 69911 km
+jupiter.surface_area = 61420 km^2
+
+neptune.mass = 1.024e26 kg
+neptune.radius = 24622 km
+neptune.surface_area = 7618 km^2
+
+mercury.mass = 3.285e23 kg
+mercury.radius = 2439.7 km
+mercury.surface_area = 74.8 km^2
+
+saturn.mass = 5.683e26 kg
+saturn.radius = 58232 km
+saturn.surface_area = 42700 km^2
+
+uranus.mass = 8.681e25 kg
+uranus.radius = 25362 km 
+uranus.surface_area = 8083 km^2
+
+venus.mass = 4.867e24 kg
+venus.radius = 6051.8 km
+venus.surface_area = 460.2 km^2
+
+pluto.mass = 1.30900e22 kg
+pluto.radius = 1188.3 km
+pluto.surface_area = 16647940 km^2
+
+earth.sun_distance = 149,597,870 km
+mars.sun_distance = 227,940,000 km
+mercury.sun_distance = 57,900,000 km
+venus.sun_distance = 108,200,000 km
+jupiter.sun_distance = 778,300,000 km
+neptune.sun_distance = 4,497,100,000 km
+saturn.sun_distance = 1,427,000,000 km
+uranus.sun_distance = 2,871,000,000 km
+pluto.sun_distance = 5,913,000,000 km
+
+speed_of_light = 299792458 m/s
 pi = 3.141592653589793
 eulersnum = 2.7182818284590452353602874713527
 eulersmasch = 0.577215664901532860606512
 golden_ratio = 1.6180339887498948420
 light_speed = 299792458 m/s
-avogadro = 602214075999999987023872 = 6.02214076e23 1/mol
 boltzmann = 1.380649e−23 J/K
 gas_constant = 8.314462618 J/mol K
 luminous_efficacy = 683 lm/W
 atmosphere = 101325 Pa
-sun_to_earth = 149,597,870 km
-sun_to_mars = 227,940,000 km
-sun_to_mercury = 57,900,000 km
-sun_to_venus = 108,200,000 km
-sun_to_jupiter = 778,300,000 km
-sun_to_neptune = 4,497,100,000 km
-sun_to_saturn = 1,427,000,000 km
-sun_to_uranus = 2,871,000,000 km
-sun_to_pluto = 5,913,000,000 km
-I_naught = 1.0 * 10^-12 W/m^2
-speed_of_light = 299792458 m/s
 avogadros_num = 6.02214086 * 10^23 mol^-1
-pi - First 16 numbers of pi = 3.141592653589793
+
+
+mass in KG
+radius in KM
+surface area in km^2
+gravity in m/s^2
 
 Usage:
 var = tiquations.example(pi,67)
