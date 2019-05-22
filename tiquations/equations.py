@@ -1,18 +1,16 @@
 #Package created by Tinos Psomadakis
-#Version 1.1.0
+#Version 1.1.1
 import os
 import math
 from constants import *
 from planets import *
 def version():
     print('''
-Currently running tiquations Version 1.1
+Currently running tiquations Version 1.1.1
 Changelog:
 
--Completely revamped planets by switching to classes. Usage is now PLANET.OPTION e.g earth.surface_area or mars.gravity
--Added angle of incidence, angle of refraction and refractive index equations
--Added wave speed, length, frequency, time period equations
--Updated Euler's number to work with Pyhton builtin
+-Added solar system index to planets (position of planets in solar system)
+-Added eccentricity factor to planets
 ''')
 
 #NOTE TO SELF ADD . to constants
