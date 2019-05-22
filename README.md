@@ -1,5 +1,7 @@
 <h1>Tiquations 1.1</h1>
 
+<h2>Welcome</h2>
+<p>Tiquations is an Open-Source Python package that is aimed at giving mathematicians and scientists easy access to important equations that they may use often. It was made in python 3.7 and should work on all versions higher than 3.0.</p>
 <h2>Documentation</h2>
 <p>I have created a website using wix but it's really not that great. The easiest way to go about reading documentation is to type tiquations.help() in your console.</p>
 
