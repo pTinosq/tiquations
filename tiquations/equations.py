@@ -1,15 +1,18 @@
 #Package created by Tinos Psomadakis
-#Version 1.0.0
+#Version 1.1.0
 import os
 import math
-from .constants import *
-from .planets import *
+from constants import *
+from planets import *
 def version():
     print('''
 Currently running tiquations Version 1.1
 Changelog:
 
 -Completely revamped planets by switching to classes. Usage is now PLANET.OPTION e.g earth.surface_area or mars.gravity
+-Added angle of incidence, angle of refraction and refractive index equations
+-Added wave speed, length, frequency, time period equations
+-Updated Euler's number to work with Pyhton builtin
 ''')
 
 #NOTE TO SELF ADD . to constants
@@ -20,7 +23,7 @@ def quadratic(num1,num2,num3):
     last=math.sqrt(num2**2 - 4 * (num1) * (num3))
     result1 = -num2 + last
     ans1 = (result1 / (2 * num1))
-    result2 = -num2 - last 
+    result2 = -num2 - last
     ans2 = (result2 / (2 * num1))
     return ans1, ans2
 
@@ -36,7 +39,7 @@ Usage: pythagoras(a=3,c=4) leaving out the side you want to solve for."""
     if have_a and not have_b and have_c:
         return math.sqrt((c**2)-(a**2))
     if have_a and have_b and not have_c:
-       return math.sqrt((a**2)+(b**2)) 
+       return math.sqrt((a**2)+(b**2))
 
     raise Exception("You must specify exactly two sides.")
 
@@ -51,14 +54,14 @@ def pythagoras_a(b,c):
 def pythagoras_b(a,c):
     return math.sqrt((c**2)-(a**2))
 
-    
+
 #Solve c using pythagoras
 def pythagoras_c(a,b):
     return math.sqrt((a**2)+(b**2))
 
 DEPRACATED
 '''
-    
+
 
 #Solve distance using speed and time
 def distance_dst(speed, time):
@@ -98,7 +101,7 @@ def weight_wmg(mass, gravitational_field_strength):
     """Usage: weight_wmg(Mass of object, gravitational field strength)"""
     return mass*gravitational_field_strength
 
-    
+
 #Solve mass using weight and gravitational field strength
 def mass_wmg(weight, gravitational_field_strength):
     """Usage: mass_wmg(weight (Newtons), gravitational field strength)"""
@@ -116,25 +119,25 @@ def circle_area_rad(radius):
     """Usage: Find circle's area from radius"""
     return pi*(radius**2)
 
-    
+
 #Solve for area of circle using diameter
 def circle_area_dia(diameter):
     """Usage: Find circle's area from diameter"""
     return (1/4)*(pi*(diameter**2))
 
-    
+
 #Solve for diameter of circle using radius
 def circle_diam_rad(radius):
     """Usage: Find circle's diameter from radius"""
     return radius*2
 
-    
+
 #Solve for diameter of circle using area
 def circle_diam_are(area):
     """Usage: Find circle#s diameter from the area"""
     return 2*(math.sqrt(area/pi))
 
-    
+
 #Solve for circumference of circle using area
 def circle_circum_rad(radius):
     """Usage: Find circumference from radius"""
@@ -146,13 +149,13 @@ def acceleration_avt(delta_velocity,time):
     """Usage: acceleration_avt(change in speed, time taken)"""
     return delta_velocity/time
 
-    
+
 #Solve Change in velocity using acceleration and time
 def delta_velocity_avt(acceleration,time):
     """Usage: delta_velocity_avt(acceleration of object, time taken)"""
     return acceleration*time
 
-    
+
 #Solve time taken using acceleration and change in velocity
 def time_avt(acceleration,delta_velocity):
     """Usage: time_avt(acceleration of object, change in speed)"""
@@ -170,37 +173,37 @@ def force_fpa(pressure, area):
     """Usage: force_fpa(pressure, area of object)"""
     return pressure/area
 
-    
+
 #Solve area using pressure and force
 def area_fpa(force, pressure):
     """Usage: area_fpa(force of object, pressure)"""
     return force*pressure
 
-    
+
 #Solve volume of a cylinder
 def cylinder_vol(radius,height):
     """Usage: find volume of a cylinder"""
     return pi*(radius**2*(height))
 
-    
+
 #Solve surface area of a cylinder
 def cylinder_surface_are(radius,height):
     """Usage: Find surface area of a cylinder"""
     return (2*(pi*radius*height))+2*(pi*(radius**2))
 
-    
+
 #Solve area of a trapezoid
 def trapezoid_area(base_short,base_long,height):
     """Usage: Find the area of a trapezoid"""
     return ((base_short+base_long)/2)*height
 
-    
+
 #Solve height of a trapezoid
 def trapezoid_height(base_short,base_long,area):
     """Usage: Find height of a trapezoid"""
     return 2*(area/(base_short+base_long))
 
-    
+
 #Solve surface area of a trapezoid
 def trapezoid_surface_are(base_short,base_long,height):
     """Usage: Find the surface area of a trapezoid"""
@@ -221,7 +224,7 @@ def charge_evq(energy,voltage):
     """Usage: charge_evq(energy,voltage)"""
     return energy/voltage
 
-    
+
 def power_piv(current, voltage):
     """Usage: power_piv(current, voltage)"""
     return current*voltage
@@ -231,11 +234,11 @@ def current_piv(power, voltage):
     """Usage: current_piv(power, voltage)"""
     return power/voltage
 
-    
+
 def voltage_piv(power, current):
     """Usage: voltage_piv(power,current)"""
     return power/current
-    
+
 def power_pet(energy,time):
     """Usage: power_pet(energy,time)"""
     return energy/time
@@ -290,18 +293,18 @@ def cosine_side_c(a,b,C_radians):
 
 def cosine_angle_A(a,b,c):
     """Usage: Find angle A"""
-    return math.acos(((b**2+c**2)-a**2)/(2*b*c))
+    return math.cos(((b**2+c**2)-a**2)/(2*b*c))
 
 def cosine_angle_B(a,b,c):
     """Usage: Find angle B"""
-    return math.acos(((a**2+c**2)-b**2)/(2*a*c))
+    return math.cos(((a**2+c**2)-b**2)/(2*a*c))
 
 def cosine_angle_C(a,b,c):
     """Usage: Find angle C"""
-    return math.acos(((a**2+b**2)-c**2)/(2*a*b))
+    return math.cos(((a**2+b**2)-c**2)/(2*a*b))
 
 def energy_emc(mass,speedoflight):
-    """Usage: energy_emc(mass of object, speed of light) - You can use the constant light_speed.""" 
+    """Usage: energy_emc(mass of object, speed of light) - You can use the constant light_speed."""
     return mass*speedoflight**2
 
 def mass_emc(energy,speedoflight):
@@ -478,6 +481,42 @@ def gravity_tlg(time,length):
 
 #END OF SIR ERAZ GITHUB
 
+def wave_frequency_t(time_period):
+    """Usage: Finding the wave frequency using time period.
+    f=1/T"""
+    return 1/time_period
+
+def wave_speed_flv(frequency,wave_length):
+    """Usage: Finding the wave speed using frequency and wave length.
+    v=f×λ"""
+    return frequency*wave_length
+
+def frequency_flv(wave_length,wave_speed):
+    """Usage: Finding the frequency using wave speed and wave length.
+    f=v/λ"""
+    return wave_speed/wave_length
+
+def wave_length_flv(frequency,wave_speed):
+    """Usage: Finding the wave length using frequency and wave speed.
+    λ=v/f"""
+    return wave_speed/frequency
+
+def refractive_index_nir(angle_incidence,angle_refraction):
+    """Usage: Find refractive index using angle of incidence and angle of refraction"""
+    refractive_index_nir_resul=math.sin(angle_incidence)/math.sin(angle_refraction)
+    return refractive_index_nir_resul
+
+def angle_incidence_nir(refractive_index,angle_refraction):
+    """Usage: Find angle of incidence using refractive index and angle of refraction
+    returns in radians"""
+    angle_incidence_nir_resul=refractive_index*math.sin(angle_refraction)
+    return angle_incidence_nir_resul
+
+def angle_refraction_nir(refractive_index,angle_incidence):
+    """Usage: Find angle of refraction using refractive index and angle of incidence
+    returns in radians"""
+    angle_refraction_nir_resul=math.sin(angle_incidence)/refractive_index
+    return angle_refraction_nir_resul
 
 def help():
     #General
@@ -555,14 +594,24 @@ cube_vol(side_length) - Find the volume of a cube using one side
 rectangle_vol(length,width,height) - Find the volume of a rectangle using length, width and height
 sphere_vol(radius) - Find the volume of a sphere using it's radius
 cone_vol(radius,height) - Find the volume of a cone using the radius and height
-pyramid_vol(base_area,height) - Find the volume of a pyramid using the area of the base and height
+pyramid_vol(base_area,height) - Find the volume of a pyramid using the area of the base and height#
+
+NEW IN TIQUATIONS 1.1
+
+wave_frequency_t(time_period) - Find wave frequency using time
+wave_speed_flv(frequency,wave_length) - Find wave speed using frequency and wave speed
+frequency_flv(wave_length,wave_speed) - Find frequency using wave length and wave speed
+wave_length_flv(frequency,wave_speed)  - Find wave length using frequency and wave speed
+refractive_index_nir(angle_incidence,angle_refraction) - Find refractive index using angle of incidence and angle of refraction
+angle_incidence_nir(refractive_index,angle_refraction) - Find angle of incidence using refractive index and angle of angle_refraction
+angle_refraction_nir(refractive_index,angle_incidence) - Find angle of refraction using refractive index and angle of incidence
 
 Usage:
 hello = tiquations.example_xyz(5,72)
 testing = tiquations.quadratic(1,2,-3)
 
           ''')
-    
+
     #Built-in variables
     print('''
 Built-in constants:
@@ -606,7 +655,7 @@ saturn.radius = 58232 km
 saturn.surface_area = 42700 km^2
 
 uranus.mass = 8.681e25 kg
-uranus.radius = 25362 km 
+uranus.radius = 25362 km
 uranus.surface_area = 8083 km^2
 
 venus.mass = 4.867e24 kg

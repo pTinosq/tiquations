@@ -1,6 +1,6 @@
 import math
 pi = math.pi
-eulersnum= 2.7182818284590452353602874713527
+eulersnum= math.e
 eulersmasch = 0.577215664901532860606512
 golden_ratio = 1.6180339887498948420
 light_speed = 299792458
@@ -52,7 +52,7 @@ saturn.radius = 58232 km
 saturn.surface_area = 42700 km^2
 
 uranus.mass = 8.681e25 kg
-uranus.radius = 25362 km 
+uranus.radius = 25362 km
 uranus.surface_area = 8083 km^2
 
 venus.mass = 4.867e24 kg
