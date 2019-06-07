@@ -1,18 +1,23 @@
 #Package created by Tinos Psomadakis
-#Version 1.0.0
+#Version 1.2
 import os
 import math
-from .constants import *
-from .planets import *
 def version():
     print('''
-Currently running tiquations Version 1.1
+Currently running tiquations Version 1.2
 Changelog:
 
--Completely revamped planets by switching to classes. Usage is now PLANET.OPTION e.g earth.surface_area or mars.gravity
+-NEW WEBSITE www.tiquations.com
+-Added solar system index to planets (position of planets in solar system)
+-Added eccentricity factor to planets
+-Added volume to planets
+-Added temperature conversion equations
+-Huge bug fix
+-More major bug fixes
+-Added huge collection of elemnents from periodic table with help from python module periodictable
+-Added docstrings
+-Added important information to package (__author__, __copyright__ etc.)
 ''')
-
-#NOTE TO SELF ADD . to constants
 
 #Quadratic formula solver
 def quadratic(num1,num2,num3):
@@ -20,7 +25,7 @@ def quadratic(num1,num2,num3):
     last=math.sqrt(num2**2 - 4 * (num1) * (num3))
     result1 = -num2 + last
     ans1 = (result1 / (2 * num1))
-    result2 = -num2 - last 
+    result2 = -num2 - last
     ans2 = (result2 / (2 * num1))
     return ans1, ans2
 
@@ -36,7 +41,7 @@ Usage: pythagoras(a=3,c=4) leaving out the side you want to solve for."""
     if have_a and not have_b and have_c:
         return math.sqrt((c**2)-(a**2))
     if have_a and have_b and not have_c:
-       return math.sqrt((a**2)+(b**2)) 
+       return math.sqrt((a**2)+(b**2))
 
     raise Exception("You must specify exactly two sides.")
 
@@ -51,14 +56,14 @@ def pythagoras_a(b,c):
 def pythagoras_b(a,c):
     return math.sqrt((c**2)-(a**2))
 
-    
+
 #Solve c using pythagoras
 def pythagoras_c(a,b):
     return math.sqrt((a**2)+(b**2))
 
 DEPRACATED
 '''
-    
+
 
 #Solve distance using speed and time
 def distance_dst(speed, time):
@@ -98,7 +103,7 @@ def weight_wmg(mass, gravitational_field_strength):
     """Usage: weight_wmg(Mass of object, gravitational field strength)"""
     return mass*gravitational_field_strength
 
-    
+
 #Solve mass using weight and gravitational field strength
 def mass_wmg(weight, gravitational_field_strength):
     """Usage: mass_wmg(weight (Newtons), gravitational field strength)"""
@@ -114,31 +119,31 @@ def gravity_wmg(weight, mass):
 #Solve for area of circle using radius
 def circle_area_rad(radius):
     """Usage: Find circle's area from radius"""
-    return pi*(radius**2)
+    return math.pi*(radius**2)
 
-    
+
 #Solve for area of circle using diameter
 def circle_area_dia(diameter):
     """Usage: Find circle's area from diameter"""
-    return (1/4)*(pi*(diameter**2))
+    return (1/4)*(math.pi*(diameter**2))
 
-    
+
 #Solve for diameter of circle using radius
 def circle_diam_rad(radius):
     """Usage: Find circle's diameter from radius"""
     return radius*2
 
-    
+
 #Solve for diameter of circle using area
 def circle_diam_are(area):
     """Usage: Find circle#s diameter from the area"""
-    return 2*(math.sqrt(area/pi))
+    return 2*(math.sqrt(area/math.pi))
 
-    
+
 #Solve for circumference of circle using area
 def circle_circum_rad(radius):
     """Usage: Find circumference from radius"""
-    return 2*(pi*radius)
+    return 2*(math.pi*radius)
 
 
 #Solve acceleration using Change in velocity and time
@@ -146,13 +151,13 @@ def acceleration_avt(delta_velocity,time):
     """Usage: acceleration_avt(change in speed, time taken)"""
     return delta_velocity/time
 
-    
+
 #Solve Change in velocity using acceleration and time
 def delta_velocity_avt(acceleration,time):
     """Usage: delta_velocity_avt(acceleration of object, time taken)"""
     return acceleration*time
 
-    
+
 #Solve time taken using acceleration and change in velocity
 def time_avt(acceleration,delta_velocity):
     """Usage: time_avt(acceleration of object, change in speed)"""
@@ -170,37 +175,37 @@ def force_fpa(pressure, area):
     """Usage: force_fpa(pressure, area of object)"""
     return pressure/area
 
-    
+
 #Solve area using pressure and force
 def area_fpa(force, pressure):
     """Usage: area_fpa(force of object, pressure)"""
     return force*pressure
 
-    
+
 #Solve volume of a cylinder
 def cylinder_vol(radius,height):
     """Usage: find volume of a cylinder"""
-    return pi*(radius**2*(height))
+    return math.pi*(radius**2*(height))
 
-    
+
 #Solve surface area of a cylinder
 def cylinder_surface_are(radius,height):
     """Usage: Find surface area of a cylinder"""
-    return (2*(pi*radius*height))+2*(pi*(radius**2))
+    return (2*(math.pi*radius*height))+2*(math.pi*(radius**2))
 
-    
+
 #Solve area of a trapezoid
 def trapezoid_area(base_short,base_long,height):
     """Usage: Find the area of a trapezoid"""
     return ((base_short+base_long)/2)*height
 
-    
+
 #Solve height of a trapezoid
 def trapezoid_height(base_short,base_long,area):
     """Usage: Find height of a trapezoid"""
     return 2*(area/(base_short+base_long))
 
-    
+
 #Solve surface area of a trapezoid
 def trapezoid_surface_are(base_short,base_long,height):
     """Usage: Find the surface area of a trapezoid"""
@@ -221,7 +226,7 @@ def charge_evq(energy,voltage):
     """Usage: charge_evq(energy,voltage)"""
     return energy/voltage
 
-    
+
 def power_piv(current, voltage):
     """Usage: power_piv(current, voltage)"""
     return current*voltage
@@ -231,11 +236,11 @@ def current_piv(power, voltage):
     """Usage: current_piv(power, voltage)"""
     return power/voltage
 
-    
+
 def voltage_piv(power, current):
     """Usage: voltage_piv(power,current)"""
     return power/current
-    
+
 def power_pet(energy,time):
     """Usage: power_pet(energy,time)"""
     return energy/time
@@ -276,17 +281,17 @@ def orbittime_vrt(orbitalspeed,radius):
     """Usage: orbittime_vrt(orbital speed, radius of orbit)"""
     return (2*math.pi*radius)/orbitalspeed
 
-def cosine_side_a(b,c,A_radians):
+def cosine_side_a(b,c,angle_A):
     """Usage: Find side a"""
-    return math.sqrt((b**2+c**2)-2*(b*c*math.cos(A_radians)))
+    return math.sqrt((b**2+c**2)-(2*(b*c*math.cos(angle_A))))
 
-def cosine_side_b(a,c,B_radians):
+def cosine_side_b(a,c,angle_B):
     """Usage: Find side b"""
-    return math.sqrt(a**2+c**2-2*a*c*math.cos(B_radians))
+    return math.sqrt(a**2+c**2-(2*a*c*math.cos(angle_B)))
 
-def cosine_side_c(a,b,C_radians):
+def cosine_side_c(a,b,angle_C):
     """Usage: Find side c"""
-    return math.sqrt(a**2+b**2-2*a*b*math.cos(C_radians))
+    return math.sqrt(a**2+b**2-(2*a*b*math.cos(angle_C)))
 
 def cosine_angle_A(a,b,c):
     """Usage: Find angle A"""
@@ -301,7 +306,7 @@ def cosine_angle_C(a,b,c):
     return math.acos(((a**2+b**2)-c**2)/(2*a*b))
 
 def energy_emc(mass,speedoflight):
-    """Usage: energy_emc(mass of object, speed of light) - You can use the constant light_speed.""" 
+    """Usage: energy_emc(mass of object, speed of light) - You can use the constant light_speed."""
     return mass*speedoflight**2
 
 def mass_emc(energy,speedoflight):
@@ -461,28 +466,130 @@ def mirror_ho_hidido(distance_image,distance_object,height_image):
 #L = length of string (of pendulum)
 #g = grav constant (acceleration of grav)
 
-#T = 2(pi)*sqrt(L/g)
+#T = 2(math.pi)*sqrt(L/g)
 
 #find T with L and g
 def time_tlg(length,gravity):
     """Usage: PENDULUMS - Find time using length and gravity"""
-    return (2 * pi) *(math.sqrt(length / gravity))
+    return (2 * math.pi) *(math.sqrt(length / gravity))
 #find L with T and g
 def length_tlg(time,gravity):
     """Usage: PENDULUMS - Find length using time and gravity"""
-    return gravity * (time / (2 * pi))**2
+    return gravity * (time / (2 * math.pi))**2
 #find g with T and L
 def gravity_tlg(time,length):
     """Usage: PENDULUMS - Find gravity using time and length"""
-    return (2 * pi)**2 / time**2
+    return (2 * math.pi)**2 / time**2
 
 #END OF SIR ERAZ GITHUB
+
+def wave_frequency_t(time_period):
+    """Usage: Finding the wave frequency using time period.
+    f=1/T"""
+    return 1/time_period
+
+def wave_speed_flv(frequency,wave_length):
+    """Usage: Finding the wave speed using frequency and wave length.
+    v=f×λ"""
+    return frequency*wave_length
+
+def frequency_flv(wave_length,wave_speed):
+    """Usage: Finding the frequency using wave speed and wave length.
+    f=v/λ"""
+    return wave_speed/wave_length
+
+def wave_length_flv(frequency,wave_speed):
+    """Usage: Finding the wave length using frequency and wave speed.
+    λ=v/f"""
+    return wave_speed/frequency
+
+def refractive_index_nir(angle_incidence,angle_refraction):
+    """Usage: Find refractive index using angle of incidence and angle of refraction"""
+    refractive_index_nir_resul=math.sin(angle_incidence)/math.sin(angle_refraction)
+    return refractive_index_nir_resul
+
+def angle_incidence_nir(refractive_index,angle_refraction):
+    """Usage: Find angle of incidence using refractive index and angle of refraction
+    returns in radians"""
+    angle_incidence_nir_resul=refractive_index*math.sin(angle_refraction)
+    return angle_incidence_nir_resul
+
+def angle_refraction_nir(refractive_index,angle_incidence):
+    """Usage: Find angle of refraction using refractive index and angle of incidence
+    returns in radians"""
+    angle_refraction_nir_resul=math.sin(angle_incidence)/refractive_index
+    return angle_refraction_nir_resul
+
+def Kelvin_C(Celsius):
+    """Usage: Convert to Kelvin from Celsius
+    Kelvin_C(Celsius)"""
+    return Celsius+273.15
+
+def Kelvin_F(Fahrenheit):
+    """Usage: Convert to Kelvin from Fahrenheit
+    Kelvin_F(Fahrenheit)"""
+    return  (Fahrenheit-32) * 5/9 + 273.15
+
+def Celsius_K(Kelvin):
+    """Usage: Convert to Celsius from Kelvin
+    Celsius_K(Kelvin)"""
+    return Kelvin-273.15
+
+def Celsius_F(Fahrenheit):
+    """Usage: Convert to Celsius from Fahrenheit
+    Celsius_F(Fahrenheit)"""
+    return  (Fahrenheit-32)*5/9
+
+def Fahrenheit_C(Celsius):
+    """Usage: Convert to Fahrenheit from Celsius
+    Fahrenheit_C(Celsius)"""
+    return (Celsius* 9/5)+32
+
+def Fahrenheit_K(Kelvin):
+    """Usage: Convert to Fahrenheit from Kelvin
+    Fahrenheit_K(Kelvin)"""
+    return (Kelvin-273.15)*9/5 + 32
+
+def kinetic_energy_kmv(mass,velocity):
+    """Usage: Find kinetic energy from mass and velocity"""
+    result = 0.5*(mass*velocity**2)
+    return result
+
+def mass_kmv(kinetic_energy,velocity):
+    """Usage: Find mass from kinetic energy and velocity"""
+    result = (2*kinetic_energy)/velocity**2
+    return result
+
+def velocity_kmv(kinetic_energy,mass):
+    """Usage: Find velocity from kinetic energy and mass"""
+    result = math.sqrt(kinetic_energy/(0.5*mass))
+    return result
+
+def GPE_gpemgh(mass,gravity,height):
+    """Usage: Find gravitational potential energy from mass, gravity and height"""
+    result=mass*gravity*height
+    return result
+
+def mass_gpemgh(GPE,gravity,height):
+    """Usage: Find mass from gravitational potential energy, gravity and height"""
+    result=GPE/gravity*height
+    return result
+
+def gravity_gpemgh(GPE,mass,height):
+    """Usage: Find gravity from gravitational potential energy, mass and height"""
+    result=GPE/mass*height
+    return result
+
+def height_gpemgh(GPE,mass,gravity):
+    """Usage: Find height from gravitational potential energy, mass and gravity"""
+    result=GPE/mass*gravity
+    return result
 
 
 def help():
     #General
     print('''
-https://tinosps.wixsite.com/tiquations
+https://www.tiquations.com
 
 A python package containing useful equations for science and maths.
 Created by Tinos Psomadakis\n
@@ -521,7 +628,7 @@ cylinder_surface_are(radius,height) - Find surface area of cylinder
 trapezoid_area(base_short,base_long,height) - Find area of trapezoid
 trapezoid_height(base_short,base_long,area) - Find height of trapezoid
 trapezoid_surface_are(base_short,base_long,height) - Find surface are of trapezoid
-pythagoras(a=None, b=None, c=None) - Use pythagoras' theorem to solve for a missing side
+pythagoras(a=None, b=None, c=None) - Use pythagoras' theorum to solve for a missing side
 energy_evq(voltage,charge) - Find energy using potential difference and charge
 voltage_evq(energy,charge) - Find potential difference using energy and charge
 charge_evq(energy,voltage) - Find charge using energy and potential difference
@@ -555,14 +662,61 @@ cube_vol(side_length) - Find the volume of a cube using one side
 rectangle_vol(length,width,height) - Find the volume of a rectangle using length, width and height
 sphere_vol(radius) - Find the volume of a sphere using it's radius
 cone_vol(radius,height) - Find the volume of a cone using the radius and height
-pyramid_vol(base_area,height) - Find the volume of a pyramid using the area of the base and height
+pyramid_vol(base_area,height) - Find the volume of a pyramid using the area of the base and height#
+
+
+NEW IN TIQUATIONS 1.2
+
+wave_frequency_t(time_period) - Find wave frequency using time
+wave_speed_flv(frequency,wave_length) - Find wave speed using frequency and wave speed
+frequency_flv(wave_length,wave_speed) - Find frequency using wave length and wave speed
+wave_length_flv(frequency,wave_speed)  - Find wave length using frequency and wave speed
+refractive_index_nir(angle_incidence,angle_refraction) - Find refractive index using angle of incidence and angle of refraction
+angle_incidence_nir(refractive_index,angle_refraction) - Find angle of incidence using refractive index and angle of angle_refraction
+angle_refraction_nir(refractive_index,angle_incidence) - Find angle of refraction using refractive index and angle of incidence
+Kelvin_C(Celsius) - Convert Celsius to Kelvin
+Kelvin_F(Fahrenheit) - Convert Fahrenheit to Kelvin
+Celsius_K(Kelvin) - Convert Kelvin to Celsius
+Celsius_F(Fahrenheit) - Convert Fahrenheit to Celsius
+Fahrenheit_C(Celsius) - Convert Celsius to Fahrenheit
+Fahrenheit_K(Kelvin) - Convert Kelvin to Fahrenheit
+kinetic_energy_kmv(mass,velocity) - Find kinetic energy using mass and velocity
+velocity_kmv(kinetic_energy,mass) - Find velocity using kinetic energy and mass
+mass_kmv(kinetic_energy,velocity) - Find mass using kinetic energy and velocity
+GPE_gpemgh(mass,gravity,height) - Find gravitational potential energy using mass, gravity and height
+mass_gpemgh(GPE,gravity,height) - Find mass using gravitational potential energy, gravity and height
+gravity_gpemgh(GPE,mass,height) - Find gravity using gravitational potential energy, mass and height
+height_gpemgh(GPE,mass,gravity) - Find height using gravitational potential energy, mass and gravity
+friction_fnc(normal_force,friction_coefficient) - Find force of friction using normal force and friction coefficent
+normal_fnc(friction_force,friction_coefficient) - Find normal force using force of friction and friction coefficent
+coefficient_fmc(friction_force,normal_force) - Find friction coefficent using force of friction and normal force
+acceleration_aug(friction_coefficient,gravity) - Find acceleration using friction coefficient and gravitational constant
+coefficient_aug(acceleration,gravity) - Find friction coefficient using acceleration and gravitational constant
+gravity_aug(acceleration,friction_coefficient) - Find gravitational constant using acceleration and friction coefficient
+coefficient_cfn(friction,normal) - Find coefficient with friction and normal force
+friction_cfn(coefficient,normal) - Find friction using coefficient and normal force
+normal_cfn(coefficient,friction) - Find normal force using coefficient and friction
+radius_rf(focal_point) -radius with focal point for concave and convex mirrors
+focal_rf(radius) - focal point with radius for concave and convex mirrors
+focal_point(distance_image,distance_object) - Find focal point with distance of image and distance of object
+mirror_distance_image(focal_point,distance_object) - Find distance of image with focal point and distance of object
+mirror_distance_object(focal_point,distance_image) - Find distance of object with focal point and distance of image
+mirror_mag_h(height_image,height_object) - Find magnification using height of image and height of object
+mirror_mag_d(distance_image,distance_object) - Find magnification using distance of image and distance of object
+mirror_hi_m(magnification,height_object) - Find height of image using magnification and height of object
+mirror_hi_hodido(distance_image,distance_object,height_object) - Usage: Find height of image using height of object, distance of object and height of object
+mirror_ho_m(height_image,magnification) - Find height of object using magnification
+mirror_ho_hidido(distance_image,distance_object,height_image) - Find height of object using height of image, distance of object and height of object
+time_tlg(length,gravity) - PENDULUMS: Find time using length and gravity
+length_tlg(time,gravity) - PENDULUMS: Find length using time and gravity
+gravity_tlg(time,length) - PENDULUMS: Find gravity using time and length
 
 Usage:
 hello = tiquations.example_xyz(5,72)
 testing = tiquations.quadratic(1,2,-3)
 
           ''')
-    
+
     #Built-in variables
     print('''
 Built-in constants:
@@ -606,7 +760,7 @@ saturn.radius = 58232 km
 saturn.surface_area = 42700 km^2
 
 uranus.mass = 8.681e25 kg
-uranus.radius = 25362 km 
+uranus.radius = 25362 km
 uranus.surface_area = 8083 km^2
 
 venus.mass = 4.867e24 kg
