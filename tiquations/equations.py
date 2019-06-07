@@ -1,10 +1,10 @@
 #Package created by Tinos Psomadakis
-#Version 1.2
+#Version 1.2.1
 import os
 import math
 def version():
     print('''
-Currently running tiquations Version 1.2
+Currently running tiquations Version 1.2.1
 Changelog:
 
 -NEW WEBSITE www.tiquations.com
@@ -17,6 +17,9 @@ Changelog:
 -Added huge collection of elemnents from periodic table with help from python module periodictable
 -Added docstrings
 -Added important information to package (__author__, __copyright__ etc.)
+
+Version 1.2.1
+-Fixed typo
 ''')
 
 #Quadratic formula solver
@@ -628,7 +631,7 @@ cylinder_surface_are(radius,height) - Find surface area of cylinder
 trapezoid_area(base_short,base_long,height) - Find area of trapezoid
 trapezoid_height(base_short,base_long,area) - Find height of trapezoid
 trapezoid_surface_are(base_short,base_long,height) - Find surface are of trapezoid
-pythagoras(a=None, b=None, c=None) - Use pythagoras' theorum to solve for a missing side
+pythagoras(a=None, b=None, c=None) - Use pythagoras' theorem to solve for a missing side
 energy_evq(voltage,charge) - Find energy using potential difference and charge
 voltage_evq(energy,charge) - Find potential difference using energy and charge
 charge_evq(energy,voltage) - Find charge using energy and potential difference
