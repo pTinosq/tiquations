@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="tiquations",
-    version="1.2.1",
+    version="1.2.2",
     author="Tinos Psomadakis",
     author_email="tinosps@gmail.com",
     description="Tiquations is an Open-Source Python package that is aimed at giving mathematicians and scientists easy access to important equations that they may use often. It was made in python 3.7 and should work on all versions higher than 3.0.",
