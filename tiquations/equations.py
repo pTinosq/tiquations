@@ -1,9 +1,9 @@
 #Package created by Tinos Psomadakis
-#Version 1.2.1
+#Version 1.2
 import os
 import math
 def version():
-    print('''
+    return '''
 Currently running tiquations Version 1.2.1
 Changelog:
 
@@ -19,8 +19,11 @@ Changelog:
 -Added important information to package (__author__, __copyright__ etc.)
 
 Version 1.2.1
--Fixed typo
-''')
+
+-Added commands command that returns the command list instead of printing it.
+-Made version (This command) return instead of print
+-Spelling
+'''
 
 #Quadratic formula solver
 def quadratic(num1,num2,num3):
@@ -808,3 +811,123 @@ weight = tiquations.weight_wmg(52, earth_g)
 
 Type tiquations.variables() to see a full list with attached values
         ''')
+
+def commands():
+    return """Commands:
+
+    quadratic(a,b,c) - Find quadratic formula from an equation like 3x^2+6x+2 = 0 where a=3, b=6 and c=2.
+    distance_dst(speed,time) - Find distance using speed and time
+    speed_dst(distance,time) - Find speed using distance and time
+    time_dst(distance,speed) - Find time using distance and speed
+    force_fma(mass,acceleration) - Find force using mass and acceleration
+    mass_fma(force,acceleration) - Find mass using force and acceleration
+    acceleration_fma(force,mass) - Find acceleration using force and mass
+    force_fmg(mass,gravitational_field_strength) - Find force using the mass and gravitational field strength
+    mass_fmg(force,gravitational_field_strength) - Find mass using the force and gravitational field strength
+    gravity_fmg(force,mass) - Find gravitational field strength using force and mass
+    weight_wmg(mass, gravitational_field_strength) - Find weight using mass and gravitational field strength
+    mass_wmg(weight, gravitational_field_strength) - Find mass using weight and gravitational field strength
+    gravity_wmg(weight, mass) - Find gravitational field strength using weight and mass
+    circle_area_rad(radius) - Find area of a circle using radius
+    circle_area_dia(diameter) - Find area of a circle using diameter
+    circle_diam_rad(radius) - Find diameter of a circle using radius
+    circle_diam_are(area) - Find diameter of a circle using area
+    circle_circum_rad(radius) - Find circumference of a circle
+    acceleration_avt(delta_velocity,time) - Find acceleration using change in velocity and time
+    delta_velocity_avt(acceleration,time) - Find change in velocity using acceleration and time
+    time_avt(acceleration,delta_velocity) - Find time taken using change in velocity and acceleration
+    pressure_fpa(force, area) - Find pressure using force and area
+    force_fpa(pressure, area) - Find force using pressure and area
+    area_fpa(force, pressure) - Find area using force and pressure
+    cylinder_vol(radius,height) - Find volume of cylinder
+    cylinder_surface_are(radius,height) - Find surface area of cylinder
+    trapezoid_area(base_short,base_long,height) - Find area of trapezoid
+    trapezoid_height(base_short,base_long,area) - Find height of trapezoid
+    trapezoid_surface_are(base_short,base_long,height) - Find surface are of trapezoid
+    pythagoras(a=None, b=None, c=None) - Use pythagoras' theorem to solve for a missing side
+    energy_evq(voltage,charge) - Find energy using potential difference and charge
+    voltage_evq(energy,charge) - Find potential difference using energy and charge
+    charge_evq(energy,voltage) - Find charge using energy and potential difference
+    power_piv(current, potential_difference) - Find power using current and potential difference
+    current_piv(power, potential_difference) - Find current using power and potential difference
+    potential_dif_piv(power, current) - Find potential difference using power and current
+    power_pet(energy,time) - Find power using energy and time
+    energy_pet(power,time) - Find energy using power and time
+    time_pet(power,energy) - Find time using power and energy
+    sequence_nth(first_term,term_number,common_difference) - Find nth term of sequence
+    sequence_first(nth,term_number,common_difference) - Find the first term of a sequence
+    sequence_difference(nth,first_term,term_number) - Find difference of a sequence
+    sequence_termnum(nth,first_term,common_difference) - Find term number of a sequence
+    orbitalspeed_vrt(radius,time) - Find orbital speed using radius and orbit time
+    radius_vrt(orbitalspeed,time) - Find radius using orbital speed and orbit time
+    orbittime_vrt(orbitalspeed,radius) - Find orbit time using orbital speed and radius
+    cosine_side_a(b,c,A_radians) - Find side a using cosine rule
+    cosine_side_b(a,c,B_radians) - Find side b using cosine rule
+    cosine_side_c(a,b,C_radians) - Find side c using cosine rule
+    cosine_angle_A(a,b,c) - Find angle A using cosine rule
+    cosine_angle_B(a,b,c) - Find angle B using cosine rule
+    cosine_angle_C(a,b,c) - Find angle C using cosine rule
+    energy_emc(mass,speedoflight) - Find energy using mass and speed of light
+    mass_emc(energy,speedoflight) - Find mass using energy and speed of light
+    speedoflight_emc(energy,mass) - Find speed of light using energy and mass. You can also use the light_speed constant.
+    schwarzschild(gravity,mass,speedoflight) - Find the Schwarzschild radius of a black hole
+    sphere_mass(density,radius) - Find mass of a sphere using density and radius
+    sphere_density(mass,radius) - Find density of a sphere using mass and radius
+    sphere_radius(mass,density) - Find radius of a sphere using mass and density
+    cube_vol(side_length) - Find the volume of a cube using one side
+    rectangle_vol(length,width,height) - Find the volume of a rectangle using length, width and height
+    sphere_vol(radius) - Find the volume of a sphere using it's radius
+    cone_vol(radius,height) - Find the volume of a cone using the radius and height
+    pyramid_vol(base_area,height) - Find the volume of a pyramid using the area of the base and height#
+
+
+    NEW IN TIQUATIONS 1.2
+
+    wave_frequency_t(time_period) - Find wave frequency using time
+    wave_speed_flv(frequency,wave_length) - Find wave speed using frequency and wave speed
+    frequency_flv(wave_length,wave_speed) - Find frequency using wave length and wave speed
+    wave_length_flv(frequency,wave_speed)  - Find wave length using frequency and wave speed
+    refractive_index_nir(angle_incidence,angle_refraction) - Find refractive index using angle of incidence and angle of refraction
+    angle_incidence_nir(refractive_index,angle_refraction) - Find angle of incidence using refractive index and angle of angle_refraction
+    angle_refraction_nir(refractive_index,angle_incidence) - Find angle of refraction using refractive index and angle of incidence
+    Kelvin_C(Celsius) - Convert Celsius to Kelvin
+    Kelvin_F(Fahrenheit) - Convert Fahrenheit to Kelvin
+    Celsius_K(Kelvin) - Convert Kelvin to Celsius
+    Celsius_F(Fahrenheit) - Convert Fahrenheit to Celsius
+    Fahrenheit_C(Celsius) - Convert Celsius to Fahrenheit
+    Fahrenheit_K(Kelvin) - Convert Kelvin to Fahrenheit
+    kinetic_energy_kmv(mass,velocity) - Find kinetic energy using mass and velocity
+    velocity_kmv(kinetic_energy,mass) - Find velocity using kinetic energy and mass
+    mass_kmv(kinetic_energy,velocity) - Find mass using kinetic energy and velocity
+    GPE_gpemgh(mass,gravity,height) - Find gravitational potential energy using mass, gravity and height
+    mass_gpemgh(GPE,gravity,height) - Find mass using gravitational potential energy, gravity and height
+    gravity_gpemgh(GPE,mass,height) - Find gravity using gravitational potential energy, mass and height
+    height_gpemgh(GPE,mass,gravity) - Find height using gravitational potential energy, mass and gravity
+    friction_fnc(normal_force,friction_coefficient) - Find force of friction using normal force and friction coefficent
+    normal_fnc(friction_force,friction_coefficient) - Find normal force using force of friction and friction coefficent
+    coefficient_fmc(friction_force,normal_force) - Find friction coefficent using force of friction and normal force
+    acceleration_aug(friction_coefficient,gravity) - Find acceleration using friction coefficient and gravitational constant
+    coefficient_aug(acceleration,gravity) - Find friction coefficient using acceleration and gravitational constant
+    gravity_aug(acceleration,friction_coefficient) - Find gravitational constant using acceleration and friction coefficient
+    coefficient_cfn(friction,normal) - Find coefficient with friction and normal force
+    friction_cfn(coefficient,normal) - Find friction using coefficient and normal force
+    normal_cfn(coefficient,friction) - Find normal force using coefficient and friction
+    radius_rf(focal_point) -radius with focal point for concave and convex mirrors
+    focal_rf(radius) - focal point with radius for concave and convex mirrors
+    focal_point(distance_image,distance_object) - Find focal point with distance of image and distance of object
+    mirror_distance_image(focal_point,distance_object) - Find distance of image with focal point and distance of object
+    mirror_distance_object(focal_point,distance_image) - Find distance of object with focal point and distance of image
+    mirror_mag_h(height_image,height_object) - Find magnification using height of image and height of object
+    mirror_mag_d(distance_image,distance_object) - Find magnification using distance of image and distance of object
+    mirror_hi_m(magnification,height_object) - Find height of image using magnification and height of object
+    mirror_hi_hodido(distance_image,distance_object,height_object) - Usage: Find height of image using height of object, distance of object and height of object
+    mirror_ho_m(height_image,magnification) - Find height of object using magnification
+    mirror_ho_hidido(distance_image,distance_object,height_image) - Find height of object using height of image, distance of object and height of object
+    time_tlg(length,gravity) - PENDULUMS: Find time using length and gravity
+    length_tlg(time,gravity) - PENDULUMS: Find length using time and gravity
+    gravity_tlg(time,length) - PENDULUMS: Find gravity using time and length
+
+    Usage:
+    hello = tiquations.example_xyz(5,72)
+    testing = tiquations.quadratic(1,2,-3)
+    """
