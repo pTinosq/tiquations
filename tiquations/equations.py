@@ -1,10 +1,10 @@
 #Package created by Tinos Psomadakis
-#Version 1.2
+#Version 1.2.2
 import os
 import math
 def version():
     return '''
-Currently running tiquations Version 1.2.1
+Currently running tiquations Version 1.2.2
 Changelog:
 
 -NEW WEBSITE www.tiquations.com
@@ -14,7 +14,7 @@ Changelog:
 -Added temperature conversion equations
 -Huge bug fix
 -More major bug fixes
--Added huge collection of elemnents from periodic table with help from python module periodictable
+-Added huge collection of elements from periodic table with help from python module periodic table
 -Added docstrings
 -Added important information to package (__author__, __copyright__ etc.)
 
@@ -22,6 +22,9 @@ Version 1.2.1
 
 -Added commands command that returns the command list instead of printing it.
 -Made version (This command) return instead of print
+-Spelling
+
+Version 1.2.2
 -Spelling
 '''
 
