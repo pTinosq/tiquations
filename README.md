@@ -1,4 +1,6 @@
 [![Downloads](https://pepy.tech/badge/tiquations)](https://pepy.tech/project/tiquations)
+[![Downloads](https://pepy.tech/badge/tiquations/month)](https://pepy.tech/project/tiquations/month)
+[![Downloads](https://pepy.tech/badge/tiquations/week)](https://pepy.tech/project/tiquations/week)
 <h1>Tiquations 1.2.2</h1>
 
 <h2>Welcome</h2>
