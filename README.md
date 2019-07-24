@@ -1,4 +1,4 @@
-<h1>Tiquations 1.2.2</h1> [![Downloads](https://pepy.tech/badge/tiquations)](https://pepy.tech/project/tiquations)
+##Tiquations 1.2.2 [![Downloads](https://pepy.tech/badge/tiquations)](https://pepy.tech/project/tiquations)
 
 <h2>Welcome</h2>
 <p>Tiquations is an Open-Source Python package that is aimed at giving mathematicians and scientists easy access to important equations that they may use often. It was made in python 3.7 and should work on all versions higher than 3.0.</p>
