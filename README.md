@@ -1,7 +1,4 @@
-[![Downloads](https://pepy.tech/badge/tiquations)](https://pepy.tech/project/tiquations)
-[![Downloads](https://pepy.tech/badge/tiquations/month)](https://pepy.tech/project/tiquations/month)
-[![Downloads](https://pepy.tech/badge/tiquations/week)](https://pepy.tech/project/tiquations/week)
-<h1>Tiquations 1.2.2</h1>
+<h1>Tiquations 2.0</h1>
 
 <h2>Welcome</h2>
 <p>Tiquations is an Open-Source Python package that is aimed at giving mathematicians and scientists easy access to important equations that they may use often. It was made in python 3.7 and should work on all versions higher than 3.0.</p>
@@ -10,9 +7,8 @@
 
 <h2>Help commands</h2>
 <ul>
-<li>tiquations.help()</li>
-<li>constants.variables()</li>
-<li>tiquations.version()</li>
+<li>tiquations.help</li>
+<li>tiquations.changelog</li>
 </ul>
 
 <h2>Equations</h2>
@@ -43,7 +39,6 @@
 <li>Wave frequency using time</li>
 <li>Wave frequency/wave length/ wave speed</li>
 <li>Refractive Index/Angle of incidence/Angle of refraction</li>
-<li>Celsius/Fahrenheit/Kelvin conversion</li>
 <li>Velocity/Kinetic Energy/Mass</li>
 <li>Gravitational Potential Energy/Mass/Gravity/Height</li>
 <li>Friction coefficient/Friction force/Normal force</li>
@@ -53,5 +48,15 @@
 <li>Focal point/Distance of image/Distance of object</li>
 <li>Mirror magnification/Height of image/ Distance of object</li>
 <li>Mirror magnification/Distance of image/Distance of object</li>
-<li>Pendulums-Time/Length/Gravity</li>
+<li>Photon energy</li>
+<li>Moment/Force/Distance From Pivot</li>
+<li>Fringe Spacing</li>
+<li>Wave Period/Frequency/Wavelength/Velocity</li>
+</ul>
+
+<h2>Conversion</h2>
+<ul>
+<li>Kelvin/Fahrenheit/Celsius</li>
+<li>bits/bytes/kilobytes/megabytes/gigabytes/terabytes/petabytes</li>
+<li>miles/kilometers</li>
 </ul>
