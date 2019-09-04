@@ -3,9 +3,7 @@ from .equations import *
 from .constants import *
 from .planets import *
 from .chemistry import *
-from .changelog import *
 from .convert import *
-from .help import *
 import logging
 logging.getLogger(__name__).info("Made using Tiquations 2.0")
 __author__="Tinos Psomadakis"

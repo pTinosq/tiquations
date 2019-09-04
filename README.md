@@ -7,8 +7,8 @@
 
 <h2>Help commands</h2>
 <ul>
-<li>tiquations.help</li>
-<li>tiquations.changelog</li>
+<li>tiquations.help()</li>
+<li>tiquations.changelog()</li>
 </ul>
 
 <h2>Equations</h2>
