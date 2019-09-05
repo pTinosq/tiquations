@@ -2,7 +2,7 @@
 import math
 """List of all constants available
 
-Call function tiquations.help for more info
+Call function tiquations.help() for more info
 """
 pi = math.pi
 eulersnum= math.e

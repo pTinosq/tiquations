@@ -556,3 +556,35 @@ def distance_pivot_mfd(moment, force):
 def energy_photon(frequency, wavelength):
     """Usage: Calculate the energy of a photon using frequency and wavelength """
     equation = ((6.62607004e-34 )*3e+8)/wavelength
+    return equation
+
+def displacement(initial_position, final_position):
+    """Usage: Calculate the displacement in 2D space using the initial and final positions. """
+    return final_position - initial_position
+
+def velocity_vst(displacement, time):
+    """Usage: Calculate velocity using displacement and time taken."""
+
+    return displacement/time
+
+def displacement_vst(velocity, time):
+    """Usage: Calculate displacement using velocity and time taken."""
+
+    return velocity*time
+
+def time_vst(velocity, displacement):
+    """Usage: Calculate time taken using velocity and displacement."""
+
+    return displacement/velocity
+
+def resistance_rvi(voltage, current):
+    """Usage: Calculate resistance in ohms using voltage and current"""
+    return voltage*current
+
+def voltage_rvi(resistance, current):
+    """Usage: Calculate voltage using resistance and current"""
+    return resistance*current
+
+def current_rvi(resistance, voltage):
+    """Usage: Calculate current using resistance and voltage"""
+    return voltage/resistance
